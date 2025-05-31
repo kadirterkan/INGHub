@@ -9,3 +9,6 @@
 
 ### username = user
 ### password = password
+
+### You can access the application via http://localhost:8080
+### You can access the Swagger UI via http://localhost:8080/swagger-ui/index.html
