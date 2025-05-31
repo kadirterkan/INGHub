@@ -3,8 +3,48 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="1" author="kadirterkan">
+        <createTable tableName="customers">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="surname" type="varchar(255)"/>
+            <column name="credit_limit" type="numeric"/>
+            <column name="used_credit_limit" type="numeric"/>
+            <column name="created_date" type="datetime"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
 
-    <changeSet id="0" author="admin">
+        <createTable tableName="loan">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="customer_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_loan_customer" references="customers(id)"/>
+            </column>
+            <column name="loan_amount" type="numeric"/>
+            <column name="number_of_installment" type="int"/>
+            <column name="create_date" type="date"/>
+            <column name="is_paid" type="boolean"/>
+            <column name="created_date" type="datetime"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
 
+        <createTable tableName="loan_installment">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="loan_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_installment_loan" references="loan(id)"/>
+            </column>
+            <column name="amount" type="numeric"/>
+            <column name="paid_amount" type="numeric"/>
+            <column name="due_date" type="date"/>
+            <column name="payment_date" type="date"/>
+            <column name="is_paid" type="boolean"/>
+            <column name="created_date" type="datetime"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
     </changeSet>
 </databaseChangeLog>

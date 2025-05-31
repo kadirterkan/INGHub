@@ -1,9 +1,6 @@
-package org.com.bio.inghub.interfaces.rest.dto;
+package org.com.bio.inghub.interfaces.rest.response;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
-import org.com.bio.inghub.domain.model.Loan;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

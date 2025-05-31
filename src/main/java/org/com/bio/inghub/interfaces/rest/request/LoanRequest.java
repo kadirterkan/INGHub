@@ -1,4 +1,4 @@
-package org.com.bio.inghub.interfaces.rest.dto;
+package org.com.bio.inghub.interfaces.rest.request;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -18,12 +18,13 @@ public class LoanRequest {
 
     @NotNull
     @Min(value = 0, message = "Amount must be greater than or equal to 0")
-    @Max(value = Integer.MAX_VALUE, message = "Amount exceeds maximum limit")
+    @Max(value = Long.MAX_VALUE, message = "Amount exceeds maximum limit")
     private BigDecimal amount;
 
     @NotNull
     @DecimalMin(value = "0.1", message = "Interest rate must be greater than or equal to 0.1")
     @DecimalMax(value = "0.5", message = "Interest rate must be less than or equal to 0.5")
+    @Max(value = Long.MAX_VALUE, message = "Interest rate exceeds maximum limit")
     private Double interestRate;
 
     @NotNull(message = "Installment cannot be null")

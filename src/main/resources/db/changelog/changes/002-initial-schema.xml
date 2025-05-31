@@ -3,8 +3,86 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!-- Mevcut changeSet'ler buraya kadar -->
 
-    <changeSet id="0" author="admin">
+    <changeSet id="2" author="kadirterkan">
+        <insert tableName="customers">
+            <column name="name" value="Ahmet"/>
+            <column name="surname" value="Yılmaz"/>
+            <column name="credit_limit" value="50000.00"/>
+            <column name="used_credit_limit" value="0.00"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
 
+        <insert tableName="loan">
+            <column name="customer_id" value="1"/>
+            <column name="loan_amount" value="10000.00"/>
+            <column name="number_of_installment" value="12"/>
+            <column name="create_date" valueDate="CURRENT_DATE"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.33"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueDate="CURRENT_DATE"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.33"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueComputed="DATEADD('MONTH', 1, CURRENT_DATE)"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.33"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueComputed="DATEADD('MONTH', 2, CURRENT_DATE)"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.33"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueComputed="DATEADD('MONTH', 3, CURRENT_DATE)"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.33"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueComputed="DATEADD('MONTH', 4, CURRENT_DATE)"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="loan_installment">
+            <column name="loan_id" value="1"/>
+            <column name="amount" value="833.35"/>
+            <column name="paid_amount" value="0.00"/>
+            <column name="due_date" valueComputed="DATEADD('MONTH', 5, CURRENT_DATE)"/>
+            <column name="is_paid" valueBoolean="false"/>
+            <column name="created_date" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_date" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

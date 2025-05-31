@@ -1,4 +1,4 @@
-package org.com.bio.inghub.interfaces.rest.dto;
+package org.com.bio.inghub.interfaces.rest.response;
 
 import lombok.*;
 

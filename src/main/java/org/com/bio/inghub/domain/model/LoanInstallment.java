@@ -1,18 +1,22 @@
-package org.com.bio.inghub.domain;
+package org.com.bio.inghub.domain.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.com.bio.inghub.domain.common.BaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.com.bio.inghub.domain.model.common.BaseEntity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "loan_installment")
 public class LoanInstallment extends BaseEntity {
@@ -20,9 +24,9 @@ public class LoanInstallment extends BaseEntity {
     @JoinColumn(name = "loan_id", nullable = false)
     private Loan loan;
 
-    private Double amount;
+    private BigDecimal amount;
 
-    private Double paidAmount;
+    private BigDecimal paidAmount;
 
     private LocalDate dueDate;
 
