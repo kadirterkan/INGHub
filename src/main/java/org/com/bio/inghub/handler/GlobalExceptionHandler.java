@@ -2,7 +2,7 @@ package org.com.bio.inghub.handler;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import lombok.extern.slf4j.Slf4j;
-import org.com.bio.inghub.dto.ValidationErrorResponse;
+import org.com.bio.inghub.model.dto.ValidationErrorResponse;
 import org.com.bio.inghub.exception.BusinessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

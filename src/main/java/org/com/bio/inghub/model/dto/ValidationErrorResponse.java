@@ -1,4 +1,4 @@
-package org.com.bio.inghub.dto;
+package org.com.bio.inghub.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
