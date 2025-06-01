@@ -14,3 +14,7 @@
 
 ### You can access the application via http://localhost:8080
 ### You can access the Swagger UI via http://localhost:8080/swagger-ui/index.html
+
+### Alternatively, you can run the application via Docker
+#### You need to build the Docker image with the command `./gradlew build`
+#### Then you can run the Docker image with the command `docker compose up -d`
