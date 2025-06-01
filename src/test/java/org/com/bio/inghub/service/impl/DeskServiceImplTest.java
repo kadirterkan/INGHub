@@ -147,6 +147,7 @@ public class DeskServiceImplTest {
                 .id(loanId)
                 .isPaid(false)
                 .installments(installments)
+                .numberOfInstallment(1)
                 .build();
 
         for (int i = 0; i < 6; i++) {
@@ -167,7 +168,7 @@ public class DeskServiceImplTest {
 
         assertThat(receipt.getTotalPaidInstallments()).isEqualTo(1);
         assertThat(receipt.getTotalPaid()).isEqualTo(paymentAmount);
-        assertThat(receipt.getIsLoanPaid()).isFalse();
+        assertThat(receipt.getIsLoanPaid()).isTrue();
         verify(loanInstallmentService).save(any());
     }
 
@@ -179,6 +180,7 @@ public class DeskServiceImplTest {
         Loan loan = Loan.builder()
                 .id(loanId)
                 .isPaid(false)
+                .numberOfInstallment(2)
                 .build();
 
         List<LoanInstallment> installments = List.of(
@@ -238,6 +240,7 @@ public class DeskServiceImplTest {
 
         Loan loan = Loan.builder()
                 .id(loanId)
+                .numberOfInstallment(3)
                 .isPaid(false)
                 .build();
 
